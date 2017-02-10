@@ -7,6 +7,7 @@ class User < ApplicationRecord
                         uniqueness: { case_sensitive: false }
       validates :password, presence: true, length: { minimum: 6 }
       has_secure_password
+<<<<<<< 1a8ad1b1ee3090ff7b6fe37b4baaaa0182a84d5a
      def User.digest(string)
             cost = ActiveModel::SecurePassword.min_cost ?    
                         BCrypt::Engine::MIN_COST :
@@ -32,4 +33,10 @@ class User < ApplicationRecord
               update_attribute(:remember_digest, nil)
            end  
      end
+=======
+     # NEW METHOD
+      def feed
+        Micropost.where("user_id = ?", id)
+      end  
+>>>>>>> User microposting feature
 end

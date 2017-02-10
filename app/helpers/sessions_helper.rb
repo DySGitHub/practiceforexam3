@@ -1,3 +1,4 @@
+<<<<<<< 1a8ad1b1ee3090ff7b6fe37b4baaaa0182a84d5a
 
           def remember(user)
             user.remember
@@ -34,3 +35,14 @@
               @current_user = nil
           end  
     end
+=======
+ module SessionsHelper
+
+      def logged_in_user
+        unless logged_in?
+          flash[:notice] = "Please log in"
+          redirect_to login_url
+        end
+    end 
+end 
+>>>>>>> User microposting feature
